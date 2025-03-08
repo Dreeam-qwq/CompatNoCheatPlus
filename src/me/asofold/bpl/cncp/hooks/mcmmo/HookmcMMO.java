@@ -7,7 +7,6 @@ import me.asofold.bpl.cncp.hooks.AbstractHook;
 import me.asofold.bpl.cncp.hooks.generic.ConfigurableHook;
 import me.asofold.bpl.cncp.utils.PluginGetter;
 
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -16,7 +15,6 @@ import org.bukkit.event.Listener;
 import com.gmail.nossr50.mcMMO;
 import com.gmail.nossr50.events.fake.FakeBlockBreakEvent;
 import com.gmail.nossr50.events.fake.FakeBlockDamageEvent;
-import com.gmail.nossr50.events.fake.FakeEntityDamageByEntityEvent;
 
 import fr.neatmonster.nocheatplus.checks.CheckType;
 import fr.neatmonster.nocheatplus.hooks.NCPHook;
@@ -93,24 +91,6 @@ public final class HookmcMMO extends AbstractHook implements Listener, Configura
 			ncpHook = new HookFacadeImpl(useInstaBreakHook, blocksPerSecond);
 		}
 		return (NCPHook) ncpHook;
-	}
-	
-	///////////////////////////
-	// Damage (fight)
-	//////////////////////////
-	
-	@EventHandler(priority=EventPriority.LOWEST)
-    void onDamageLowest(final FakeEntityDamageByEntityEvent event){
-		final Entity entity = event.getDamager();
-		if (entity instanceof Player)
-			ncpHook.damageLowest((Player) entity);
-	}
-	
-	@EventHandler(priority=EventPriority.MONITOR)
-    void onDamageMonitor(final FakeEntityDamageByEntityEvent event){
-		final Entity entity = event.getDamager();
-		if (entity instanceof Player)
-			ncpHook.damageMonitor((Player) entity);
 	}
 	
 	///////////////////////////
