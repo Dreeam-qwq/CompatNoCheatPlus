@@ -26,86 +26,82 @@
       </snapshots>
     </repository>
     <repository>
-      <id>jitpack.io</id>
-      <url>https://jitpack.io</url>
+        <id>codemc-repo</id>
+        <url>https://repo.codemc.io/repository/maven-public</url>
     </repository>
     <repository>
         <id>viaversion-repo</id>
         <url>https://repo.viaversion.com</url>
-    </repository>
-    <repository>
-        <id>bungeecord-repo</id>
-        <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </repository>
   </repositories>
 
     <!-- Dependencies -->
     <dependencies>
         <dependency>
-          <groupId>org.spigotmc</groupId>
-          <artifactId>spigot</artifactId>
-          <version>1.8.8-R0.1-SNAPSHOT</version>
-          <scope>provided</scope>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
-       <dependency>
-          <groupId>com.gmail.nossr50.mcMMO</groupId>
-          <artifactId>mcMMO</artifactId>
-          <version>2.1.158</version>
-          <scope>system</scope>
-          <systemPath>${basedir}/libs/mcMMO-2.1.158.jar</systemPath>
-       </dependency>
-       <dependency>
-          <groupId>net.citizensnpcs</groupId>
-          <artifactId>citizensapi</artifactId>
-          <version>2.0.26-SNAPSHOT</version>
-          <scope>provided</scope>
-       </dependency>
-       <dependency>
-          <groupId>com.benzoft.gravitytubes</groupId>
-          <artifactId>gravitytubes</artifactId>
-          <version>1.0</version>
-          <scope>system</scope>
-          <systemPath>${basedir}/libs/GravityTubes.jar</systemPath>
-       </dependency>
-       <dependency>
-          <groupId>com.Zrips.CMI</groupId>
-          <artifactId>CMI</artifactId>
-          <version>1.0</version>
-          <scope>system</scope>
-          <systemPath>${basedir}/libs/CMIAPI7.6.2.0.jar</systemPath>
-       </dependency>
-       <dependency>
-	      <groupId>com.github.updated-nocheatplus.nocheatplus</groupId>
-	      <artifactId>nocheatplus</artifactId>
-	      <version>-SNAPSHOT</version>
-       </dependency>
-       <dependency>
-          <groupId>org.geysermc</groupId>
-          <artifactId>connector</artifactId>
-          <version>1.4.2-SNAPSHOT</version>
-          <scope>provided</scope>
-       </dependency>
-       <dependency>
-          <groupId>org.geysermc.floodgate</groupId>
-          <artifactId>api</artifactId>
-          <version>2.0-SNAPSHOT</version>
-          <scope>provided</scope>
-       </dependency>
-       <dependency>
-          <groupId>net.md-5</groupId>
-          <artifactId>bungeecord-api</artifactId>
-          <version>1.19-R0.1-SNAPSHOT</version>
-       </dependency>
-       <dependency>
-           <groupId>com.viaversion</groupId>
-           <artifactId>viaversion-api</artifactId>
-           <version>LATEST</version>
-       </dependency>
-       <dependency>
-          <groupId>net.md-5</groupId>
-          <artifactId>bungeecord-event</artifactId>
-          <version>1.19-R0.1-SNAPSHOT</version>
-       </dependency>
+        <dependency>
+            <groupId>com.gmail.nossr50.mcMMO</groupId>
+            <artifactId>mcMMO</artifactId>
+            <version>2.1.158</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/mcMMO-2.1.158.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>net.citizensnpcs</groupId>
+            <artifactId>citizensapi</artifactId>
+            <version>2.0.30-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.benzoft.gravitytubes</groupId>
+            <artifactId>gravitytubes</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/GravityTubes.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.Zrips.CMI</groupId>
+            <artifactId>CMI</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/CMIAPI7.6.2.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>fr.neatmonster.nocheatplus</groupId>
+            <artifactId>nocheatplus</artifactId>
+            <version>3.17.1-b223</version>
+            <scope>system</scope>
+            <systemPath>${basedir}/libs/NoCheatPlus.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.geysermc.floodgate</groupId>
+            <artifactId>api</artifactId>
+            <version>2.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.viaversion</groupId>
+            <artifactId>viaversion-api</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-api</artifactId>
+            <version>1.21-R0.5-20250930.151325-2</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.md-5</groupId>
+            <artifactId>bungeecord-event</artifactId>
+            <version>1.21-R0.5-20250930.151221-2</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <!-- Build Description Profiles -->

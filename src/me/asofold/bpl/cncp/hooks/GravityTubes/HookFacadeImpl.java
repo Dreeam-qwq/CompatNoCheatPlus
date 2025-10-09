@@ -17,7 +17,7 @@ import fr.neatmonster.nocheatplus.checks.moving.MovingData;
 import fr.neatmonster.nocheatplus.hooks.NCPHook;
 import fr.neatmonster.nocheatplus.players.DataManager;
 import fr.neatmonster.nocheatplus.players.IPlayerData;
-import fr.neatmonster.nocheatplus.utilities.location.TrigUtil;
+import fr.neatmonster.nocheatplus.utilities.math.TrigUtil;
 import me.asofold.bpl.cncp.hooks.GravityTubes.HookGravityTubes.HookFacade;
 
 public class HookFacadeImpl implements HookFacade, NCPHook {

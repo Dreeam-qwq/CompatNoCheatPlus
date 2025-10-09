@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 
 import com.viaversion.viaversion.api.Via;
-import fr.neatmonster.nocheatplus.compat.Folia;
+import fr.neatmonster.nocheatplus.compat.SchedulerHelper;
 import fr.neatmonster.nocheatplus.players.DataManager;
 import fr.neatmonster.nocheatplus.players.IPlayerData;
 import fr.neatmonster.nocheatplus.utilities.ReflectionUtil;
@@ -29,7 +29,7 @@ public class ClientVersionListener implements Listener {
     @EventHandler(priority = EventPriority.MONITOR)
     public void onPlayerJoin(PlayerJoinEvent event) {
         final Player player = event.getPlayer();
-        Folia.runSyncDelayedTask(CompatNoCheatPlus.getInstance(), (arg) -> {
+        SchedulerHelper.runSyncDelayedTask(CompatNoCheatPlus.getInstance(), (arg) -> {
             final IPlayerData pData = DataManager.getPlayerData(player);
             if (pData != null) {
                 if (ViaVersion != null && ViaVersion.isEnabled()) {
