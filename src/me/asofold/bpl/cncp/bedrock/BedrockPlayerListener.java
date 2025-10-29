@@ -8,8 +8,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
-import org.geysermc.connector.GeyserConnector;
-import org.geysermc.connector.network.session.GeyserSession;
 import org.geysermc.floodgate.api.FloodgateApi;
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
@@ -23,7 +21,6 @@ import me.asofold.bpl.cncp.config.Settings;
 public class BedrockPlayerListener implements Listener, PluginMessageListener {
     
     private Plugin floodgate = Bukkit.getPluginManager().getPlugin("floodgate");
-    private Plugin geyser = Bukkit.getPluginManager().getPlugin("Geyser-Spigot");
     private final Settings settings = CompatNoCheatPlus.getInstance().getSettings();
     
     @EventHandler(priority = EventPriority.MONITOR)
@@ -32,13 +29,6 @@ public class BedrockPlayerListener implements Listener, PluginMessageListener {
         if (floodgate != null && floodgate.isEnabled()) {
             if (FloodgateApi.getInstance().isFloodgatePlayer(player.getUniqueId())) {
                 processExemption(player);
-            }
-        } else if (geyser != null && geyser.isEnabled()) {
-            try {
-                GeyserSession session = GeyserConnector.getInstance().getPlayerByUuid(player.getUniqueId());
-                if (session != null) processExemption(player);
-            } catch (NullPointerException e) {
-                e.printStackTrace();
             }
         }
     }
@@ -62,7 +52,6 @@ public class BedrockPlayerListener implements Listener, PluginMessageListener {
     @Override
     public void onPluginMessageReceived(String channel, Player player, byte[] data) {
         if (CompatNoCheatPlus.getInstance().isBungeeEnabled() && channel.equals("cncp:geyser")) {
-            geyser = null;
             floodgate = null;
             ByteArrayDataInput input = ByteStreams.newDataInput(data);
             String playerName = input.readUTF();

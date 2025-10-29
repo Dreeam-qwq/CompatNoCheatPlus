@@ -12,7 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import fr.neatmonster.nocheatplus.checks.CheckType;
 import fr.neatmonster.nocheatplus.checks.access.IViolationInfo;
 import fr.neatmonster.nocheatplus.compat.Bridge1_9;
-import fr.neatmonster.nocheatplus.compat.Folia;
+import fr.neatmonster.nocheatplus.compat.SchedulerHelper;
 import fr.neatmonster.nocheatplus.hooks.NCPHook;
 import fr.neatmonster.nocheatplus.players.DataManager;
 import fr.neatmonster.nocheatplus.utilities.map.BlockProperties;
@@ -45,7 +45,7 @@ public class HookFacadeImpl implements HookFacade, NCPHook {
 
     /** Fighting damage of effects such as bleeding or area (potentially). */
     protected final CheckType[] exemptFightEffect = new CheckType[]{
-            CheckType.FIGHT_SPEED, CheckType.FIGHT_DIRECTION,
+            CheckType.FIGHT_VISIBLE, CheckType.FIGHT_DIRECTION,
             CheckType.FIGHT_ANGLE, CheckType.FIGHT_NOSWING,
             CheckType.FIGHT_REACH, CheckType.COMBINED_IMPROBABLE,
     };
@@ -201,7 +201,7 @@ public class HookFacadeImpl implements HookFacade, NCPHook {
         }
         else if (!isAxe){
             setPlayer(player, cancelChecksBlockBreak);
-            Folia.runSyncTask(CompatNoCheatPlus.getInstance(), (arg) -> DataManager.removeData(player.getName(), CheckType.BLOCKBREAK_FASTBREAK));
+            SchedulerHelper.runSyncTask(CompatNoCheatPlus.getInstance(), (arg) -> DataManager.removeData(player.getName(), CheckType.BLOCKBREAK_FASTBREAK));
         }
         return false;
     }

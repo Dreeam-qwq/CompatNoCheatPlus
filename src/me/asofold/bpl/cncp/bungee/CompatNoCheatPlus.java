@@ -4,8 +4,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import org.geysermc.connector.GeyserConnector;
-import org.geysermc.connector.network.session.GeyserSession;
 import org.geysermc.floodgate.api.FloodgateApi;
 
 import net.md_5.bungee.api.ProxyServer;
@@ -52,14 +50,6 @@ public class CompatNoCheatPlus extends Plugin implements Listener {
     private boolean isBedrockPlayer(ProxiedPlayer player) {
         if (floodgate) {
             return FloodgateApi.getInstance().isFloodgatePlayer(player.getUniqueId());
-        }
-        if (geyser) {
-            try {
-                GeyserSession session = GeyserConnector.getInstance().getPlayerByUuid(player.getUniqueId());
-                return session != null;
-            } catch (NullPointerException e) {
-                return false;
-            }
         }
         return false;
     }
