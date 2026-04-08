@@ -107,7 +107,7 @@
         <dependency>
             <groupId>com.viaversion</groupId>
             <artifactId>viaversion-api</artifactId>
-            <version>5.8.0</version>
+            <version>5.8.1</version>
         </dependency>
         <dependency>
             <groupId>net.md-5</groupId>
